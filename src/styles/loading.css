@@ -1,0 +1,40 @@
+.loading {
+  height: 100vh;
+  background: black;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: monospace;
+
+  /* responsive font size */
+  font-size: clamp(1rem, 4vw, 1.5rem);
+
+  padding: 1.5rem;
+  box-sizing: border-box;
+
+  text-align: center;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-width: 100%;
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .loading {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 360px) {
+  .loading {
+    font-size: 0.95rem;
+  }
+}
