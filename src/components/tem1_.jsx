@@ -13,21 +13,17 @@ export default function MainScreen() {
     height: window.innerHeight
   });
 
-
   const [opened, setOpened] = useState([false, false]);
   const [activeGift, setActiveGift] = useState(null);
-
 
   const audioRef = useRef(null);
 
   useEffect(() => {
- 
     audioRef.current = new Audio(music);
     audioRef.current.volume = 0.4;
     audioRef.current.loop = true;
     audioRef.current.play().catch(() => {});
 
- 
     const handleResize = () => {
       setSize({
         width: window.innerWidth,
@@ -46,7 +42,6 @@ export default function MainScreen() {
   }, []);
 
   const openGift = (index) => {
-
     if (audioRef.current) audioRef.current.pause();
 
     setOpened(prev =>
@@ -58,7 +53,6 @@ export default function MainScreen() {
   const closeModal = () => {
     setActiveGift(null);
 
-
     if (audioRef.current) {
       audioRef.current.play().catch(() => {});
     }
@@ -66,7 +60,6 @@ export default function MainScreen() {
 
   return (
     <div className="main">
-
       <Confetti
         width={size.width}
         height={size.height}
@@ -75,10 +68,12 @@ export default function MainScreen() {
         recycle={true}
       />
 
+
       <div className="card-container">
         <img src={cardImg} alt="Birthday Card" />
       </div>
 
+ 
       <div className="gifts">
         {opened.map((isOpen, i) => (
           <img
@@ -92,6 +87,11 @@ export default function MainScreen() {
       </div>
 
 
+      {!opened.every(Boolean) && (
+        <p className="gift-hint">Click to open gift 🎁</p>
+      )}
+
+ 
       {activeGift !== null && (
         <div className="modal-overlay" onClick={closeModal}>
           <div
@@ -102,7 +102,7 @@ export default function MainScreen() {
               ✕
             </button>
 
-       
+   
             {activeGift === 0 && (
               <div className="video-wrapper">
                 <iframe
@@ -114,7 +114,7 @@ export default function MainScreen() {
               </div>
             )}
 
-         
+       
             {activeGift === 1 && (
               <div className="poem">
                 <p>
@@ -146,8 +146,6 @@ export default function MainScreen() {
                 </p>
               </div>
             )}
-
-           
           </div>
         </div>
       )}
