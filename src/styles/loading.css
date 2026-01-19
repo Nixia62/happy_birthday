@@ -9,7 +9,7 @@
 
   font-family: monospace;
 
-  /* responsive font size */
+
   font-size: clamp(1rem, 4vw, 1.5rem);
 
   padding: 1.5rem;
@@ -24,7 +24,7 @@ pre {
   max-width: 100%;
 }
 
-/* Small phones */
+
 @media (max-width: 480px) {
   .loading {
     font-size: 1rem;
@@ -32,7 +32,7 @@ pre {
   }
 }
 
-/* Very small devices */
+
 @media (max-width: 360px) {
   .loading {
     font-size: 0.95rem;
