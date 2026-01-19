@@ -1,7 +1,7 @@
 import { useState } from "react";
-import LoadingScreen from "./components/LoadingScreen";
-import BalloonScreen from "./components/BalloonScreen";
-import MainScreen from "./components/MainScreen";
+import LoadingScreen from "./components/tem2_";
+import BalloonScreen from "./components/tem3_";
+import MainScreen from "./components/tem1_";
 
 export default function App() {
   const [stage, setStage] = useState("loading");
